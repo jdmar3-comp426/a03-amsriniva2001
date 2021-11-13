@@ -29,6 +29,7 @@ export function getIncreasingArray(startNumber, endNumber) {
     while(startNumber <= endNumber) {
         numArr = numArr.push(num);
     }
+    return numArr;
 }
 
 /**
