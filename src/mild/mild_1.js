@@ -24,12 +24,12 @@ export function sumToString(a, b) {
  *
  */
 export function getIncreasingArray(startNumber, endNumber) {
-    numArr = [];
+    numArr = {};
     num = startNumber;
     while(startNumber <= endNumber) {
         numArr = numArr.push(num);
     }
-    return numArr;
+    
 }
 
 /**
