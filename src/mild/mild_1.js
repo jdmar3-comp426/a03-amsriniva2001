@@ -64,4 +64,5 @@ export function countArray(array) {
             counter[item] = 1;
         }
     });
+    return counter;
 }
