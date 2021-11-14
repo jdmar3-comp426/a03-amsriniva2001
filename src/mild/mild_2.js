@@ -70,7 +70,8 @@ export function removeKey(object, key) {
 export function removeKeyNonDestructive(object, key) {
    let object2 = object;
    const {name, title, age, password} = object2;
-   delete object[key];
+   delete object2[key];
+   return object2;
 }
 
 /**
