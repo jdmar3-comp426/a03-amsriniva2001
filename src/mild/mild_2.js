@@ -48,8 +48,7 @@ export function identifyArray(array) {
  obj now does not contain the `password` field
  */
 export function removeKey(object, key) {
-   let pos = object.indexOf(key);
-   object.splice(pos, 1);
+   delete object.key;
 }
 
 /**
