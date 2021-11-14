@@ -99,6 +99,6 @@ export function removeKeys(object, keyList) {
    const keyArr = keyList;
    keyArr.forEach(item=>
       delete object2[item]);
-   return keyArr;
+   return object2;
    }
 
