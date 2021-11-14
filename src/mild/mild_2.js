@@ -70,6 +70,7 @@ export function removeKey(object, key) {
 export function removeKeyNonDestructive(object, key) {
    const object2 = {...object};
    delete object2[key];
+   return object2;
 }
 
 /**
