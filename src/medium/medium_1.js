@@ -55,14 +55,14 @@ export function getMedian(array) {
  */
 export function getStatistics(array) {
     array.sort(function(a, b){return a - b});
-    let l = array.length;
-    let s = getSum(array);
+    let length = array.length;
+    let sum = getSum(array);
     let mean = (s / l);
     let median = getMedian(array);
     let min = array[0];
     let max = array[l - 1];
-    let v = variance(array, mean);
+    let variance = variance(array, mean);
     let standard_deviation = (v)^(1/2);
-    return {l, s, mean, median, min, max, v, standard_deviation};
+    return {length, sum, mean, median, min, max, variance, standard_deviation};
 }
 
