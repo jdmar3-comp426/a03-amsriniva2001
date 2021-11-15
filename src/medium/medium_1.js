@@ -58,7 +58,7 @@ export function getStatistics(array) {
     var stat = {
         length: array.length,
         sum : getSum(array),
-        mean : (sum / length),
+        mean : getSum(array) / array.length,
         median: getMedian(array),
         min: array[0],
         max: array[length - 1],
