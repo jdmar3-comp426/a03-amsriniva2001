@@ -63,7 +63,7 @@ export function getStatistics(array) {
         min: array[0],
         max: array[length - 1],
         variance: variance(array, mean),
-        standard_deviation: variance^(1/2)
+        standard_deviation:  variance(array, mean)^(1/2)
     }
     return stat;
 }
