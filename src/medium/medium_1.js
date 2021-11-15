@@ -57,10 +57,10 @@ export function getStatistics(array) {
     array.sort(function(a, b){return a - b});
     let length = array.length;
     let sum = getSum(array);
-    let mean = (s / l);
+    let mean = (sum / length);
     let median = getMedian(array);
     let min = array[0];
-    let max = array[l - 1];
+    let max = array[length - 1];
     variance(array, mean);
     let standard_deviation = variance^(1/2);
     return {length, sum, mean, median, min, max, variance, standard_deviation};
