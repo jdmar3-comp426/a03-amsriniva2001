@@ -60,7 +60,7 @@ export function getStatistics(array) {
     let mean = (sum / length);
     let median = getMedian(array);
     let min = array[0];
-    let max = array[l - 1];
+    let max = array[length - 1];
     let variance = variance(array, mean);
     let standard_deviation = (variance)^(1/2);
     return {length, sum, mean, median, min, max, variance, standard_deviation};
