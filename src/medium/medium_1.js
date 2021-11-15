@@ -55,15 +55,16 @@ export function getMedian(array) {
  */
 export function getStatistics(array) {
     array.sort(function(a, b){return a - b});
-    object["length"] = array.length;
-    object["sum"] = getSum(array);
-    object["mean"] = (sum / length);
-    object["median"] = getMedian(array);
-    object["min"] = array[0];
-    object["max"] = array[length - 1];
-    object["variance"] = variance(array, mean);
-    object["standard deviation"] = v^(1/2);
-    return object;
-    //return {length, sum, mean, median, min, max, "variance", standard_deviation};
+    var stat = {
+        length: array.length,
+        sum : getSum(array),
+        mean : (sum / length),
+        median: getMedian(array),
+        min: array[0],
+        max: array[length - 1],
+        variance: variance(array, mean),
+        standard_deviation: variance^(1/2)
+    }
+    return stat;
 }
 
