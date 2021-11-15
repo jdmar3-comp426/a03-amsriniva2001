@@ -62,8 +62,8 @@ export function getStatistics(array) {
         median: getMedian(array),
         min: array[0],
         max: array[array.length - 1],
-        variance: variance(array, mean),
-        standard_deviation:  variance(array, mean)^(1/2)
+        variance: variance(array, getSum(array) / array.length),
+        standard_deviation:  variance(array, getSum(array) / array.length)^(1/2)
     }
     return stat;
 }
