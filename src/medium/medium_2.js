@@ -99,6 +99,8 @@ export const allCarStats = {
   }
 
 export const moreStats = {
-    makerHybrids: mpg_data.filter(car => car.hybrid == true),
+    makerHybrids: mpg_data.filter(car => car.hybrid == true).
+    map(function(car) { return car["make"]; }).concat(groupBy( mpg_data.filter(car => car.hybrid == true).
+    map(function(car) { return car["make"]; }), 'id')),
     avgMpgByYearAndHybrid: undefined
 };
