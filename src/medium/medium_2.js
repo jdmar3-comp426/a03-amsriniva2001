@@ -22,7 +22,7 @@ see under the methods section
 const reducer = (previousValue, currentValue) => previousValue + currentValue;
 let initialValue = 0;
 export const allCarStats = {
-    avgMpg: mpg_data.log.reduce(
+    avgMpg: mpg_data.reduce(
         (previousValue, currentValue) => previousValue + currentValue.city_mpg, initialValue) / mpg_data.length,
     allYearStats: undefined,
     ratioHybrids: undefined,
