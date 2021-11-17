@@ -19,14 +19,13 @@ see under the methods section
  *
  * @param {allCarStats.ratioHybrids} ratio of cars that are hybrids
  */
-const reducer = (previousValue, currentValue) => previousValue + currentValue;
 let initialValue = 0;
 export const allCarStats = {
     avgMpg: {city: mpg_data.reduce(
         (previousValue, currentValue) => previousValue + currentValue.city_mpg, initialValue) / mpg_data.length, 
         highway: mpg_data.reduce(
             (previousValue, currentValue) => previousValue + currentValue.highway_mpg, initialValue) / mpg_data.length},
-    allYearStats: undefined,
+    allYearStats: getStatistics(mpg_data.map(function(item) { return item["year"]; })),
     ratioHybrids: undefined,
 };
 
