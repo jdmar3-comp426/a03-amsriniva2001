@@ -102,7 +102,7 @@ export const allCarStats = {
 let hybridArray = mpg_data.filter(car => car.hybrid == true);
 let hybridMake = groupBy(hybridArray, 'make');
 export const moreStats = {
-    makerHybrids: mpg_data.filter(car => car.hybrid == true),
+    makerHybrids: 1,
     //{"make": hybridArray[counter], "hybrids":  groupBy(mpg_data, 'make')},
-    avgMpgByYearAndHybrid: hybridMake
+    avgMpgByYearAndHybrid: {make: hybridMake, hybrids: "hybrid"}
 };
