@@ -104,4 +104,4 @@ let hybridMake = groupBy(hybridArray, 'make');
 export const moreStats = {
   makerHybrids: "a",
   avgMpgByYearAndHybrid: {make: hybridMake, hybrids: "hybrid"}
-};
+}
