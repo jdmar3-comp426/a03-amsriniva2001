@@ -98,6 +98,6 @@ let hybridMake = groupBy(hybridArray, 'make');
 //[{"make": makeList, "hybrids": }]
 export const moreStats = {
   makerHybrids: "a",
-  avgMpgByYearAndHybrid: hybridID
+  avgMpgByYearAndHybrid: hybridId
   
 }
