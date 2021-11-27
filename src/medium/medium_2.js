@@ -54,8 +54,6 @@ export const allCarStats = {
  *     ]
  *}]
  *
- * //filtered out the nonhybrids
- * //make a
  *
  *
  * @param {moreStats.avgMpgByYearAndHybrid} Object where keys are years and each year
@@ -90,14 +88,20 @@ export const allCarStats = {
  */
 
 
-let hybridArray = mpg_data.filter(car => car.hybrid == true);
-let hybridId = hybridArray.map(car => {return car.id});
-//let hybridMake = groupBy(hybridArray, 'make');
+ let hybridArray = mpg_data.filter(car => car.hybrid == true);
+ let arrayGroup = [hybridArray.reduce(groupedArray)];
+ /*
+ let hybridId = hybridArray.map(car => {return car.id});
+ let hybridMake = hybridArray.map(car => {return car.make});
+ let hybridGroup = groupBy(hybridArray, 'make'); */
 
+ function groupedArray() {
+    return {"make": hybridArray.map(car => {return car.make}), "hybrids": hybridArray.map(car => {return car.id})};
+ }
 
 //[{"make": makeList, "hybrids": }]
 export const moreStats = {
   makerHybrids: "a",
-  avgMpgByYearAndHybrid: hybridId
+  avgMpgByYearAndHybrid: arrayGroup
   
 }
