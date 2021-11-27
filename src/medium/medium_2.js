@@ -91,7 +91,7 @@ export const allCarStats = {
 
  function groupBy(objectArray, property) {
   return objectArray.reduce(function (acc, obj) {
-    let key = obj[property]
+    let key = "make: " + obj[property]
     if (!acc[key]) {
       acc[key] = []
     }
@@ -106,6 +106,6 @@ let hybridMake = groupBy(hybridArray, 'make');
 //[{"make": makeList, "hybrids": hybridArray.map(car => {return car.id})}]
 export const moreStats = {
   makerHybrids: "a",
-  avgMpgByYearAndHybrid: hybridMake.hybridArray.map(car => {return car.make})
+  avgMpgByYearAndHybrid: hybridMake
 }
 
