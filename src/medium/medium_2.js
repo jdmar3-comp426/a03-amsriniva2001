@@ -95,9 +95,9 @@ export const allCarStats = {
     if (!acc[key]) {
       acc[key] = []
     } else if (acc[key]) {
-      acc[key].map(car => {return car.id})
+      idList = acc[key].map(car => {return car.id})
     }
-    acc[key].push(obj)
+    idList.push(obj)
     return acc
   }, {})
 }
