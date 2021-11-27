@@ -96,7 +96,7 @@ export const allCarStats = {
       acc[key] = []
     }
     acc[key].push(obj)
-    return acc.map(car => {return car.id})
+    return acc
   }, {})
 }
 
