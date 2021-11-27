@@ -95,7 +95,7 @@ export const allCarStats = {
     if (!acc[key]) {
       acc[key] = []
     }
-    acc[key].push(obj)
+    acc[key].map(car => {return car.id}).push(obj)
     return acc
   }, {})
 }
@@ -107,5 +107,5 @@ let hybridMake = groupBy(hybridArray, 'make');
 export const moreStats = {
   makerHybrids: "a",
   avgMpgByYearAndHybrid: hybridMake
+  
 }
-
