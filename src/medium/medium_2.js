@@ -92,7 +92,7 @@ export const allCarStats = {
 
 let hybridArray = mpg_data.filter(car => car.hybrid == true);
 let hybridId = hybridArray.map(car => {return car.id});
-let hybridMake = groupBy(hybridArray, 'make');
+//let hybridMake = groupBy(hybridArray, 'make');
 
 
 //[{"make": makeList, "hybrids": }]
