@@ -89,25 +89,15 @@ export const allCarStats = {
  * }
  */
 
- function groupBy(objectArray, property) {
-  return objectArray.reduce(function (acc, obj) {
-    let key = "make: " + obj[property]
-    if (!acc[key]) {
-      acc[key] = []
-    } else if (acc[key]) {
-      acc[key] = acc[key].map(car => {return car.id})
-    }
-    acc[key].push(obj)
-    return acc
-  }, {})
-}
 
 let hybridArray = mpg_data.filter(car => car.hybrid == true);
-//let makeList = hybridArray.map(car => {return car.make}); 
+let hybridId = hybridArray.map(car => {return car.id});
 let hybridMake = groupBy(hybridArray, 'make');
-//[{"make": makeList, "hybrids": hybridArray.map(car => {return car.id})}]
+
+
+//[{"make": makeList, "hybrids": }]
 export const moreStats = {
   makerHybrids: "a",
-  avgMpgByYearAndHybrid: hybridMake
+  avgMpgByYearAndHybrid: hybridID
   
 }
