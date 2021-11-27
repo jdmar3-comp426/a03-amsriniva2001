@@ -94,6 +94,8 @@ export const allCarStats = {
     let key = "make: " + obj[property]
     if (!acc[key]) {
       acc[key] = []
+    } else {
+      acc[key].map(car => {return car.id})
     }
     acc[key].push(obj)
     return acc
