@@ -21,7 +21,6 @@ export const repeat = (fn, n, ...params) => {
         array.push(fn(params));
         i++;
     }
-    return array;
 };
 
 
