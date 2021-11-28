@@ -121,7 +121,7 @@ return p;
 
 //[{"make": makeList, "hybrids": }]
 export const moreStats = {
-  makerHybrids: "a",
+  makerHybrids: result,
   avgMpgByYearAndHybrid: result
   
 }
