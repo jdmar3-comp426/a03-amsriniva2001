@@ -17,7 +17,7 @@
 export const repeat = (fn, n, ...params) => {
     let i = 0;
     while(i < n) {
-        fn(params);
+        fn(...params);
         i++;
     }
 };
