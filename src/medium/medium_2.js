@@ -94,7 +94,7 @@ export const allCarStats = {
    if(previousValue.make != currentValue.make) {
       array = [];
     }
-    array.push(currentValue.id)
+    array.push(currentValue.id);
     return {"make": currentValue.make, "hybrids": array}
  });
 
