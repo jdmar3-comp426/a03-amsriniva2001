@@ -102,7 +102,7 @@ export const allCarStats = {
     if(currentIndex+1 == array.length){
       return finalArray;
     }*/
-    return {"make": previousValue.make, "hybrids": hArray};
+    return {"make": currentValue.make, "hybrids": hArray};
  });
 
 /*
