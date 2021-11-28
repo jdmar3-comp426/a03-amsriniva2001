@@ -91,7 +91,6 @@ export const allCarStats = {
  let hybridArray = mpg_data.filter(car => car.hybrid == true);
  let newArray = hybridArray.map(car => {return { make: car.make, id: car.id }});
  let hArray = [];
- function group(objectArray)
  let finalArray = hybridArray.reduce(function(previousValue, currentValue) {
    if(previousValue.make != currentValue.make) {
       hArray = [];
