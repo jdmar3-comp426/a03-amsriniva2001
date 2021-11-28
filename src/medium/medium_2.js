@@ -91,7 +91,7 @@ export const allCarStats = {
  let hybridArray = mpg_data.filter(car => car.hybrid == true);
  let newArray = hybridArray.map(car => {return { make: car.make, id: car.id }});
  let finalArray = newArray.reduce(function(previousValue, currentValue, currentIndex, array) {
-   if(previousValue == currentValue) {
+   if(previousValue.make == currentValue.make) {
       array.push(currentValue.id);
    }
    else {
