@@ -94,6 +94,8 @@ export const allCarStats = {
  let finalArray = newArray.reduce(function(previousValue, currentValue, currentIndex, array) {
    if(previousValue.make != currentValue.make) {
       hArray = [];
+      previousValue = currentValue;
+      currentValue = array[currentIndex++];
     }
     hArray.push(currentValue.id);
     return {"make": currentValue.make, "hybrids": hArray}
