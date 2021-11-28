@@ -92,12 +92,16 @@ export const allCarStats = {
  let newArray = hybridArray.map(car => {return { make: car.make, id: car.id }});
  let hArray = [];
 
- let finalArray = hybridArray.reduce(function(previousValue, currentValue) {
+ let finalArray = [];
+ hybridArray.reduce(function(previousValue, currentValue, currentIndex, array) {
    if(previousValue.make != currentValue.make) {
+      finalArray.push({"make": previousValue.make, "hybrids": hArray});
       hArray = [];
     }
     hArray.push(currentValue.id);
-    return {"make": currentValue.make, "hybrids": hArray}
+    if(currentIndex+1 == array.length){
+      return finalArray;
+    }
  });
 
 /*
