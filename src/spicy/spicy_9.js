@@ -91,7 +91,16 @@ export const tenTimesFifty = () => {
  *    everyEven([1, 1, 0, 1, 1], x => x === 1)  <--  returns false
  */
 export const everyEven = (arr, test) => {
-
+    let bool = true;
+    for(let i = 0; i < arr.length - 1; i++) {
+        if(i % 2 == 0) {
+            bool = test(arr[i]);
+            if(bool == false) {
+                return false;
+            }
+        }
+    }
+    return bool;
 };
 
 
