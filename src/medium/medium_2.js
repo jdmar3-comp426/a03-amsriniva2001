@@ -96,8 +96,9 @@ export const allCarStats = {
    }
    else {
      array = [];
+     array.push(currentValue.id)
    }
-    return {"make": currentValue.make, "hybrids": array.push(currentValue.id)}
+    return {"make": currentValue.make, "hybrids": array}
  });
 
 /*
