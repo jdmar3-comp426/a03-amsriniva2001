@@ -92,11 +92,11 @@ export const allCarStats = {
  let newArray = hybridArray.map(car => {return { make: car.make, id: car.id }});
  function groupBy(objectArray, property) {
   return objectArray.reduce(function (acc, obj) {
-    let key = obj[property]
-    if (!acc[key]) {
-      acc[key] = []
+    let key = "hybrids: "
+    if (!acc["id"]) {
+      acc["id"] = []
     }
-    acc[key].push(obj)
+    acc["id"].push(obj)
     return acc
   }, {})
 }
