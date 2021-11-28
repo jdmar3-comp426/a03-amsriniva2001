@@ -88,7 +88,7 @@ export const allCarStats = {
  */
 
 
- const hybrids = cars.filter(x => x.hybrid).map(({make, id}) => ({make, id}));
+ const hybrids = mpg_data.filter(x => x.hybrid).map(({make, id}) => ({make, id}));
 const result = hybrids.reduce((p, c) => {
 var foundMake = false;
   for (const car of p) {
