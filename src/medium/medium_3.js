@@ -62,5 +62,6 @@ export function searchName(car_data, searchTerm) {
  * @returns {[]} an array of car objects
  */
 export function searchByYear(car_data, years) {
-
+    let array = car_data.filter(car => (years.some(car.year)));
+    return array;
 }
