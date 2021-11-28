@@ -48,7 +48,7 @@ export function searchMpg(car_data, minCity, minHighway) {
  * @returns {[]} array of cars
  */
 export function searchName(car_data, searchTerm) {
-    let array = car_data.filter(car => (car.id == searchTerm));
+    let array = car_data.filter(car => (car.id.includes(searchTerm)));
     return array;
 }
 
