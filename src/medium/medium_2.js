@@ -19,11 +19,15 @@ see under the methods section
  *
  * @param {allCarStats.ratioHybrids} ratio of cars that are hybrids
  */
+let initialValue = 0;
 export const allCarStats = {
-    avgMpg: undefined,
-    allYearStats: undefined,
-    ratioHybrids: undefined,
-};
+    avgMpg: {city: mpg_data.reduce(
+        (previousValue, currentValue) => previousValue + currentValue.city_mpg, initialValue) / mpg_data.length, 
+        highway: mpg_data.reduce(
+            (previousValue, currentValue) => previousValue + currentValue.highway_mpg, initialValue) / mpg_data.length},
+    allYearStats: getStatistics(mpg_data.map(function(car) { return car["year"]; })),
+    ratioHybrids: (mpg_data.filter(car => car.hybrid == true).length) / mpg_data.length
+}
 
 
 /**
@@ -49,7 +53,6 @@ export const allCarStats = {
  *       "2011 BMW ActiveHybrid 750Li Sedan"
  *     ]
  *}]
- *
  *
  *
  *
@@ -83,7 +86,42 @@ export const allCarStats = {
  *
  * }
  */
+
+
+ const hybrids = mpg_data.filter(x => x.hybrid).map(({make, id}) => ({make, id}));
+const result = hybrids.reduce((p, c) => {
+var foundMake = false;
+  for (const car of p) {
+    if(car["make"]==c["make"]) {
+      foundMake = true;
+      car["hybrids"].push(c.id);
+    }
+  }
+if(!foundMake)
+  p.push({"make": c.make, "hybrids": [c.id]});
+return p;
+}, [])
+
+/*
+ function groupBy(objectArray, property) {
+  return objectArray.reduce(function (acc, obj) {
+    let key = obj[property]
+    if (!acc[key]) {
+      acc[key] = []
+    }
+    acc[key].push(obj)
+    return acc
+  }, {})
+} */
+ /*
+ let hybridId = hybridArray.map(car => {return car.id});
+ let hybridMake = hybridArray.map(car => {return car.make});
+ let hybridGroup = groupBy(hybridArray, 'make'); */
+
+
+//[{"make": makeList, "hybrids": }]
 export const moreStats = {
-    makerHybrids: undefined,
-    avgMpgByYearAndHybrid: undefined
-};
+  makerHybrids: result,
+  avgMpgByYearAndHybrid: result
+  
+}
